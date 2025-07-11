@@ -84,13 +84,13 @@ Supports various audio formats and can organize downloads into subfolders automa
 
 ---
 
-## 🍪 Cookies (optional)
+## 🍪 Cookies (optional, Linux only)
 
 If you want to download private playlists or avoid login restrictions:
 
 1. Export your YouTube cookies as `cookies.txt`.
 2. Place the file in your home directory or the same folder as the script.
-3. The script already points to `/home/arm/cookies.txt`. Change the path inside the script if needed.
+3. The script already points to `/home/user/cookies.txt`. Change the path inside the script if needed.
 
 ---
 
