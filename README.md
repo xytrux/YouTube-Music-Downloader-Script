@@ -1,58 +1,61 @@
-# YouTube Music Downloader Script
+# 🎵 YouTube Music Downloader Script
 
-Scripts for downloading audio from **YouTube Music playlists or videos** using `yt-dlp`.
-Supports various audio formats, can organize downloads into subfolders, and optionally uses cookies for private playlists.
+Simple scripts to download audio from **YouTube Music playlists or videos** using [`yt-dlp`](https://github.com/yt-dlp/yt-dlp).
+Supports various audio formats, playlist folders, and cookie authentication for private playlists.
 
 ---
 
 ## ✅ Features
 
-* Download entire playlists or single videos
-* Save audio as `opus`, `mp3`, `alac`, `flac`, `wav`, and more
-* Embed thumbnails and metadata in audio files
-* Optionally create a folder for each playlist or video
-* Works with private playlists using a **cookies.txt** file
-* Runs on **Windows (PowerShell)** and **Linux (Bash)**
+* Download playlists or single videos
+* Extract audio in **Opus**, **MP3**, **ALAC**, **FLAC**, **WAV**, and more
+* Embed thumbnails and metadata into your audio files
+* Automatically organize downloads into subfolders
+* Works with private playlists using `cookies.txt`
+* Available for **Windows (PowerShell)** and **Linux (Bash)**
 
 ---
 
 ## 🔧 Prerequisites
 
-* [`yt-dlp`](https://github.com/yt-dlp/yt-dlp#installation)
-* [`ffmpeg`](https://ffmpeg.org/)
+### **yt-dlp & FFmpeg Installation**
 
-> **Linux:**
-> Install on Arch Linux:
-> `sudo pacman -S yt-dlp ffmpeg`
+| OS / Distro                                 | yt-dlp                                                                                                         | FFmpeg                                                              |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Arch Linux / Manjaro / EndeavourOS**      | `sudo pacman -S yt-dlp`                                                                                        | `sudo pacman -S ffmpeg`                                             |
+| **Debian / Ubuntu / Linux Mint / Pop!\_OS** | `sudo apt install yt-dlp`                                                                                      | `sudo apt install ffmpeg`                                           |
+| **Fedora**                                  | `sudo dnf install yt-dlp`                                                                                      | `sudo dnf install ffmpeg`                                           |
+| **openSUSE**                                | `sudo zypper install yt-dlp`                                                                                   | `sudo zypper install ffmpeg`                                        |
+| **Windows**                                 | [Download yt-dlp](https://github.com/yt-dlp/yt-dlp#installation)                                               | [Download FFmpeg](https://ffmpeg.org/download.html)                 |
+| *(Others)*                                  | Use your distro’s package manager or [see yt-dlp install guide](https://github.com/yt-dlp/yt-dlp#installation) | [See ffmpeg.org for instructions](https://ffmpeg.org/download.html) |
 
-> **Windows:**
->
-> * Add both `yt-dlp.exe` and `ffmpeg.exe` to your system’s **PATH**
+> ⚠️ Make sure both `yt-dlp` and `ffmpeg` are available in your **PATH**.
 
 ---
 
-## 🍪 Using Cookies.txt (optional, recommended for private playlists)
+## 🍪 Cookies.txt (optional, for private playlists)
 
-To download from your **YouTube Music account (private playlists, liked songs, etc.):**
+If you want to download from **your account** (private playlists, liked songs, etc.):
 
-1. Export your YouTube cookies using a browser extension like [Get cookies.txt](https://chrome.google.com/webstore/detail/get-cookiestxt/).
-2. Save it anywhere as `cookies.txt`.
-3. When running the script, it will **ask if you want to use a cookies file**:
+1. Install the **Get cookies.txt** browser extension:
 
-   * If you answer **Y**, enter the full path to your `cookies.txt`.
-   * Example:
-     **Windows:** `C:\Users\YourName\Downloads\cookies.txt`
-     **Linux:** `/home/yourname/Downloads/cookies.txt`
+   * [Chrome](https://chrome.google.com/webstore/detail/get-cookiestxt/lijhoplpmkdphhdogognogojjphklgha)
+   * [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
+2. Export your YouTube cookies and save them as `cookies.txt`.
+3. When the script asks if you want to use cookies, type **Y** and paste the **full path** to the file.
+   Examples:
+   **Windows:** `C:\Users\YourName\Downloads\cookies.txt`
+   **Linux:** `/home/username/Downloads/cookies.txt`
 
-If you don't use a cookies file, the script will still work for public playlists.
+If you skip this step, the script will only download **public playlists**.
 
 ---
 
 ## ▶️ How to Use
 
-### Windows PowerShell
+### **Windows PowerShell**
 
-1. Open PowerShell in the folder containing the script.
+1. Open PowerShell in the folder with the script.
 2. Run:
 
    ```powershell
@@ -61,10 +64,10 @@ If you don't use a cookies file, the script will still work for public playlists
 
 ---
 
-### Linux Bash
+### **Linux Bash**
 
-1. Open a terminal or right-click → "Run in Terminal" in the folder containing the script.
-2. Make it executable (first time only):
+1. Open a terminal or right-click → "Run in Terminal" in the folder with the script.
+2. Make the script executable (first time only):
 
    ```bash
    chmod +x ytmusic-dl.sh
@@ -79,15 +82,15 @@ If you don't use a cookies file, the script will still work for public playlists
 
 ## 🛠 Example Features
 
-* Extract audio in **Opus** format
-* Add thumbnails and song info
-* Automatically organize downloads into folders
+* Save audio as **Opus** with the best quality
+* Embed album art & song metadata
+* Organize files in folders named after the playlist
 
 ---
 
-## 🔜 Future Improvements
+## 🔜 Planned Improvements
 
 * GUI version
 * Auto-update yt-dlp
-* Save your default options in a config file
-* Linux desktop shortcut
+* Save default options in a config file
+* Linux desktop launcher (`.desktop` file)
