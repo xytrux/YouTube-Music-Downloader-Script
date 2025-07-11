@@ -23,8 +23,8 @@ read -p "Enter the desired audio format (e.g., mp3, alac, flac, wav, etc.) [Defa
 # Get playlist/video title if subfolder is requested
 if [[ "$makeSubfolder" =~ ^[Yy] ]]; then
     echo "Fetching playlist/video title from yt-dlp..."
-    title=$(yt-dlp --cookies /home/arm/cookies.txt --flat-playlist --print "%(playlist_title)s" "$url" 2>/dev/null | head -n 1)
-    [ -z "$title" ] && title=$(yt-dlp --cookies /home/arm/cookies.txt --print "%(title)s" "$url" 2>/dev/null | head -n 1)
+    title=$(yt-dlp --cookies /home/user/cookies.txt --flat-playlist --print "%(playlist_title)s" "$url" 2>/dev/null | head -n 1)
+    [ -z "$title" ] && title=$(yt-dlp --cookies /home/user/cookies.txt --print "%(title)s" "$url" 2>/dev/null | head -n 1)
     [ -z "$title" ] && title="Untitled"
     folderName=$(echo "$title" | tr -d '\\/:*?"<>|')
     outputFolder="$baseDir/$folderName"
